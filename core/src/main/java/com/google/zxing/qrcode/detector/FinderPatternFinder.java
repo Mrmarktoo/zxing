@@ -665,7 +665,7 @@ public class FinderPatternFinder {
   }
 
   /**
-   * <p>Orders by {@link FinderPatternFinder#getEstimatedModuleSize()}</p>
+   * <p>Orders by {@link FinderPattern#getEstimatedModuleSize()}</p>
    */
   private static final class EstimatedModuleComparator implements Comparator<FinderPattern>, Serializable {
     @Override

@@ -24,7 +24,7 @@ import java.util.Map;
  * decode a QR code. The decoder may optionally receive hints from the caller which may help
  * it decode more quickly or accurately.
  *
- * See {@link MultiFormatReader}, which attempts to determine what barcode
+ * See {MultiFormatReader}, which attempts to determine what barcode
  * format is present within the image as well, and then decodes it accordingly.
  *
  * @author Sean Owen
@@ -57,7 +57,7 @@ public interface Reader {
    * @throws ChecksumException if a potential barcode is found but does not pass its checksum
    * @throws FormatException if a potential barcode is found but format is invalid
    */
-  Result decode(BinaryBitmap image, Map<DecodeHintType,?> hints)
+  Result decode(BinaryBitmap image, Map<DecodeHintType, ?> hints)
       throws NotFoundException, ChecksumException, FormatException;
 
   /**

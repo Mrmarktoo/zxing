@@ -1,0 +1,27 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+//配置项目编码，避免生成jar包时，提示gbk标识符问题
+compileJava.options.encoding = "UTF-8"
+
+task makeJar(type: Copy) {
+    //删除存在的
+    delete 'build/libs/zxing-3.0.4.jar'
+    //设置拷贝的文件
+    from('build/intermediates/bundles/debug/')
+    //打进jar包后的文件目录
+    into('build/libs/')
+    //将classes.jar放入build/libs/目录下
+    //include ,exclude参数来设置过滤
+    //（我们只关心classes.jar这个文件）
+    include('core.jar')
+    //重命名
+    rename('core.jar', 'zxing-3.4.0.jar')
+}
+
+makeJar.dependsOn(build)

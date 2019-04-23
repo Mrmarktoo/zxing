@@ -20,6 +20,7 @@ package com.google.zxing;
  * A wrapper implementation of {@link LuminanceSource} which inverts the luminances it returns -- black becomes
  * white and vice versa, and each value becomes (255-value).
  *
+ * 一个亮度源的包装实现，用来翻转亮度源返回的数据-黑色变成白色，反之亦然，并且每个值变化都为：255-value
  * @author Sean Owen
  */
 public final class InvertedLuminanceSource extends LuminanceSource {
